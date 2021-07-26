@@ -1,0 +1,111 @@
+@mixin base {
+    min-height: 92vh;
+    max-height: fit-content;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: url("../media/library.jpg") center no-repeat;
+    background-size: cover;
+    color: $tertiary-color;
+  }
+
+@mixin form {
+  background: $nav-color;
+  height: 75vh;
+  width: 40%;
+  border-radius: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  margin-top: 50px;
+
+  input {
+    font-family: $primary-font;
+    width: 55%;
+    border-radius: 12%;
+  }
+
+  button {
+      @include button;
+      font-size: 24px;
+  }
+}
+
+@mixin list-item {
+  height: 35vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  font-family: $primary-font;
+  color: black;
+  margin: 20px;
+  background-color: $tertiary-color;
+  border-radius: 10%;
+
+  
+  img {
+      height: 80%;
+      width: 25%;
+      margin: 20px;
+  }
+
+  .info {
+      height: 100%;
+      width: 35%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: flex-start;
+      h2 {
+          margin: 5px;
+      }
+  }
+
+  .buttons {
+      height: 100%;
+      width: 23%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      button {
+          @include button;
+          color: $base-color;
+      }
+  
+      .remove-button {
+          &:hover {
+              color: $delete-color;
+          }
+      }
+  }
+}
+
+@mixin button {
+  font-size: 18px;
+  text-align: center;
+  font-family: $secondary-font;
+  color: $tertiary-color;
+  border-radius: 30%;
+  border: 1px solid transparent;
+  background-color: inherit;
+  &:hover {
+      font-weight: bold;
+  }
+}
+
+@mixin are-you-sure-box{
+  height: 70%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  p{
+      font-family: $secondary-font;
+  }
+}
